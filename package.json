@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/JuanDiegoSuarezLondono/campeonato#readme",
   "devDependencies": {
-    "live-server": "^1.2.1"
+    "live-server": "^1.2.1",
+    "parcel-bundler": "^1.12.5"
   },
   "dependencies": {
     "mysql": "^2.18.1"

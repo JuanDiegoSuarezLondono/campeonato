@@ -1,28 +1,89 @@
-<html>
-  <head>
+  <!DOCTYPE html>
+  <html>
     <title>Campeonato</title>
-    <link
-      rel="stylesheet"
-      href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
-    />
-    <link rel="stylesheet" href="./assets/index.css" />
-  <script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=82VOSlpcJe1Sqja0ab1UslKsJSgnDKhdDdw5tciGjBTZGTDSP8s_xxJ4OgF74kDVtizC3JfNgKucrZerN2HZLoHmFRsJeOiRhm1lfM9shwvj92tnC8IeiLgqpwH2ltx4SA9drbExI-wz3sACgycfq4Oiii7XUn4m3JNY60E_nGw8cgzyHRiExWAaMYKOU0So0LVZESAvQ3zQABYBqueMwjYFaUrFjIsXq1kA2k_bAFL85izO3M8U8U-xfGsRL49KpofFYuv0WBbB-LpXJvQ6Ddrczcr6ujdVW0e3WHD4g4QiA4WnN2PxWDkvMnGUecRQR17Qm__oDwL2x3ayX2TdLDEF08Nxq7oYbUOmFfHxAjdKEZfOBH6dt-0fsBmoFgIry_EYq7TrDGOqwYIH05GkbQ" charset="UTF-8"></script></head>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
-  <body>
-    <header>
-      <h1>Bienvenido a Tus Campeonatos</h1>
-      <p></p>
-    </header>
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
 
-  </body>
-  <SCRIPT type="text/javascript">
-    function createNewPerson(name) {
-  var obj = {};
-  obj.name = name;
-  obj.greeting = function() {
-    alert('Hi! I\'m ' + this.name + '.');
-  };
-  return obj;
-}
-    </SCRIPT>
-</html>
+    <body>
+      <section class="container">
+        <div class="row">
+        <h3 class="center-align">¡Bienvenido al Campeonato!</h3>
+        <h5 class="center-align">Ingresa tus datos para entrar</h5>
+          <article class="col s6 offset-s3">
+            <form id="log-in">
+              <div class="input-field">
+                <i class="material-icons prefix">perm_identity</i>
+                <label for="usuario">Correo o usuario</label>
+                <input type="text" name="usuario" required>
+              </div>
+    
+              <div class="input-field">
+                <i class="material-icons prefix">lock_open</i>
+                <label for="pass">Contraseña</label>
+                <input type="password" name="pass" required>
+              </div>
+              
+              <p class="center-align">
+                <button class="waves-effect waves-light btn green" type="submit" onClick="javascript:window.location.href='/otra.html'"><i class="material-icons right">login</i>Entrar</button>
+                <button data-target="modal1" class="waves-effect waves-light btn modal-trigger blue" type="button"><i class="material-icons right">account_circle</i>¡Registrate!</button>
+              </p>
+            </form>
+
+            <div id="modal1" class="modal">
+              <div class="modal-content">
+                <form id="sign-in">
+                  <div class="input-field">
+                    <i class="material-icons prefix">face</i>
+                    <label for="nombre">Nos interesa conocerte ¿Como te llamas?</label>
+                    <input type="text" name="nombre" required>
+                  </div>
+        
+                  <div class="input-field">
+                    <i class="material-icons prefix">email</i>
+                    <label for="correo">Danos un correo electronico para mantenerte al tanto</label>
+                    <input type="email" name="correo" required>
+                  </div>
+
+                  <div class="input-field">
+                    <i class="material-icons prefix">face_retouching_natural</i>
+                    <label for="username">¿Como prefieres que te digamos?</label>
+                    <input type="text" name="username" required>
+                  </div>
+                        
+                  <div class="input-field">
+                    <i class="material-icons prefix">lock</i>
+                    <label for="new-pass">Pongámosela difícil a los maleantes, dame una contraseña </label>
+                    <input type="password" name="new-pass" required>
+                  </div>
+
+                  <div class="input-field">
+                    <i class="material-icons prefix">enhanced_encryption</i>
+                    <label for="conf-new-pass">Dame esa contraseña de nuevo para verificar</label>
+                    <input type="password" name="conf-new-pass" required>
+                  </div>
+                  
+                  <div class="center-align">
+                    <button class="waves-effect waves-light btn green" type="submit" href="#!"><i class="material-icons right">send</i>Enviar</button>
+                  </div>
+                </form>
+              </div>
+              
+            </div>
+    
+          </article>
+        </div>
+      </section>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/index.js"></script>
+      <script type="text/javascript" src="modelo/servicios/ServiciosUsuario.js"></script>
+    </body>
+  </html>
