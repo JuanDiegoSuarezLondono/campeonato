@@ -19,5 +19,8 @@
   "homepage": "https://github.com/JuanDiegoSuarezLondono/campeonato#readme",
   "devDependencies": {
     "live-server": "^1.2.1"
+  },
+  "dependencies": {
+    "mysql": "^2.18.1"
   }
 }

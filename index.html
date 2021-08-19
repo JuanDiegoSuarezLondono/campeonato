@@ -10,9 +10,19 @@
 
   <body>
     <header>
-      <h1>Campeonato</h1>
-      <p>Un campeonato locochon</p>
+      <h1>Bienvenido a Tus Campeonatos</h1>
+      <p></p>
     </header>
 
   </body>
+  <SCRIPT type="text/javascript">
+    function createNewPerson(name) {
+  var obj = {};
+  obj.name = name;
+  obj.greeting = function() {
+    alert('Hi! I\'m ' + this.name + '.');
+  };
+  return obj;
+}
+    </SCRIPT>
 </html>
