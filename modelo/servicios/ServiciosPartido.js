@@ -1,15 +1,46 @@
-package modelo.servicios;
+import Partido from "../Partido.js";
+import Equipo from "../Partido.js";
 
-import modelo.Partido;
+export default class ServiciosPartido {    
+    constructor(){}
+    
+    static obtenerPartidos() {
+        return new Promise( function(resolve) {
+            
+            var equipos = [];
+            
+            fetch('http://localhost/campeonato_api/equipos.php',{
+                method: 'GET',
+                mode: 'cors',
+            })
+            .then( res => res.json())
+            .then( data => {
+                data.forEach(equipo => {
+                    equipos.push(new Equipo(equipo.id, equipo.nombre));
+                });
+                resolve(equipos);
+            })
+        });
+    } 
+    
+    static agregarPartido(datos) {
+        return new Promise( function(resolve) {
+                        
+            fetch('http://localhost/campeonato_api/partidos.php',{
+                method: 'POST',
+                mode: 'cors',
+                body: datos,
+            })
+            .then( res => res.json())
+            .then( data => {
+                console.log("Exito: "+data);
+            })
+        });
+    } 
+}
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
 
+/*
 public class ServiciosPartido extends Conexion {
 
     public List<Partido> ObtenerPartidos() throws SQLException, ClassNotFoundException, ParseException {
@@ -47,4 +78,4 @@ public class ServiciosPartido extends Conexion {
     public String toString() {
         return "ServiciosPartido{}";
     }
-}
+}*/

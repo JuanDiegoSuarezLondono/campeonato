@@ -1,9 +1,19 @@
-package modelo;
+export default class Partido {
 
-import java.io.*;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+    constructor(id, usuario, local, visitante, fecha, golesLocal, golesVisitante) {
+        this.id = id;
+        this.usuario = usuario;
+        this.local = local;
+        this.visitante = visitante;
+        this.fecha = fecha;
+        this.golesLocal = golesLocal;
+        this.golesVisitante = golesVisitante;
+    }
 
+}
+
+
+/*
 public class Partido implements Serializable {
 
     private int partidoId;
@@ -22,54 +32,6 @@ public class Partido implements Serializable {
         this.golesVisitante = golesVisitante;
     }
 
-    public int getPartidoId() {
-        return partidoId;
-    }
-
-    public void setPartidoId(int partidoId) {
-        this.partidoId = partidoId;
-    }
-
-    public Date getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Date fecha) {
-        this.fecha = fecha;
-    }
-
-    public String getEquipoLocal() {
-        return equipoLocal;
-    }
-
-    public void setEquipoLocal(String equipoLocal) {
-        this.equipoLocal = equipoLocal;
-    }
-
-    public String getEquipoVisitante() {
-        return equipoVisitante;
-    }
-
-    public void setEquipoVisitante(String equipoVisitante) {
-        this.equipoVisitante = equipoVisitante;
-    }
-
-    public int getGolesLocal() {
-        return golesLocal;
-    }
-
-    public void setGolesLocal(int golesLocal) {
-        this.golesLocal = golesLocal;
-    }
-
-    public int getGolesVisitante() {
-        return golesVisitante;
-    }
-
-    public void setGolesVisitante(int golesVisitante) {
-        this.golesVisitante = golesVisitante;
-    }
-
     @Override
     public String toString() {
         String resultados = "";
@@ -78,4 +40,4 @@ public class Partido implements Serializable {
         return resultados;
     }
 
-}
+}*/

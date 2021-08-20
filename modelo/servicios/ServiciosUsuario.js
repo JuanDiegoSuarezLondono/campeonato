@@ -4,8 +4,6 @@ formulario.addEventListener('submit', function(e){
 
     e.preventDefault();
 
-    console.log(formulario);
-
     var fomrData = new FormData(formulario);
     var datos = new FormData();
 

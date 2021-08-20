@@ -5,7 +5,6 @@ export default class ServiciosEquipo {
     constructor(){}
     
     static obtenerEquipos() {
-
         return new Promise( function(resolve) {
             
             var equipos = [];

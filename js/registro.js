@@ -1,4 +1,5 @@
 import ServiciosEquipo from "../modelo/servicios/ServiciosEquipo.js";
+import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 
 var formulario = document.getElementById('log-in');
 
@@ -11,11 +12,11 @@ window.onload = async function(){
     equipos.forEach(equipo => {
         var elementLoc = document.createElement("option");
         elementLoc.textContent = equipo.nombre;
-        elementLoc.value = equipo;
+        elementLoc.value = equipo.id;
         selectLocal.appendChild(elementLoc);
         var elementVis = document.createElement("option");
         elementVis.textContent = equipo.nombre;
-        elementVis.value = equipo;
+        elementVis.value = equipo.id;
         selectVisitante.appendChild(elementVis);
     });
 
@@ -27,12 +28,16 @@ window.onload = async function(){
 
 
 formulario.addEventListener('submit', async function(e) {
-
     e.preventDefault();
 
-    var datos = new FormData(formulario);
+    var selectLocal = document.getElementById('select-local').value;
+    var selectVisitante = document.getElementById('select-visitante').value;
+    var datosFormulario = new FormData(formulario);
+    var datos = new FormData();
 
-    console.log("Ahhhhhhhhhhhh");
-         
-    
+    datos.append("usuario",1);
+    datos.append("local",selectLocal);
+    datos.append("visitante",selectVisitante);
+    datos.append("fecha",datosFormulario.get("fecha"));
+    ServiciosPartido.agregarPartido(datos);
 })
