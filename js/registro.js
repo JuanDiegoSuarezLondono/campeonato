@@ -4,7 +4,6 @@ import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 var formulario = document.getElementById('log-in');
 
 window.onload = async function(){
-
     var selectLocal = document.getElementById('select-local');
     var selectVisitante = document.getElementById('select-visitante');
     var equipos  = await ServiciosEquipo.obtenerEquipos();
@@ -29,12 +28,10 @@ window.onload = async function(){
 
 formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
-
     var selectLocal = document.getElementById('select-local').value;
     var selectVisitante = document.getElementById('select-visitante').value;
     var datosFormulario = new FormData(formulario);
     var datos = new FormData();
-
     datos.append("usuario",1);
     datos.append("local",selectLocal);
     datos.append("visitante",selectVisitante);

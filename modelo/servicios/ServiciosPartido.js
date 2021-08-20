@@ -1,5 +1,4 @@
 import Partido from "../Partido.js";
-import Equipo from "../Partido.js";
 
 export default class ServiciosPartido {    
     constructor(){}
@@ -7,18 +6,18 @@ export default class ServiciosPartido {
     static obtenerPartidos() {
         return new Promise( function(resolve) {
             
-            var equipos = [];
+            var partidos = [];
             
-            fetch('http://localhost/campeonato_api/equipos.php',{
+            fetch('http://localhost/campeonato_api/partidos.php',{
                 method: 'GET',
                 mode: 'cors',
             })
             .then( res => res.json())
-            .then( data => {
-                data.forEach(equipo => {
-                    equipos.push(new Equipo(equipo.id, equipo.nombre));
+            .then( datos => {
+                datos.forEach(partido => {
+                    partidos.push(new Partido(partido.id, partido.usuario, partido.Partido));
                 });
-                resolve(equipos);
+                resolve(partidos);
             })
         });
     } 
