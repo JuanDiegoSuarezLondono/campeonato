@@ -6,7 +6,7 @@ var formulario = document.getElementById('log-in');
 window.onload = async function(){
     var selectLocal = document.getElementById('select-local');
     var selectVisitante = document.getElementById('select-visitante');
-    var equipos  = await ServiciosEquipo.obtenerEquipos();
+    var equipos  = await ServiciosEquipo.ObtenerEquipos();
 
     equipos.forEach(equipo => {
         var elementLoc = document.createElement("option");
@@ -24,8 +24,6 @@ window.onload = async function(){
     document.getElementById('output').innerHTML = lengthOfName;
 };
 
-
-
 formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
     var selectLocal = document.getElementById('select-local').value;
@@ -36,5 +34,5 @@ formulario.addEventListener('submit', async function(e) {
     datos.append("local",selectLocal);
     datos.append("visitante",selectVisitante);
     datos.append("fecha",datosFormulario.get("fecha"));
-    ServiciosPartido.agregarPartido(datos);
+    ServiciosPartido.AgregarPartido(datos);
 })

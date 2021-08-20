@@ -4,7 +4,7 @@ export default class ServiciosEquipo {
        
     constructor(){}
     
-    static obtenerEquipos() {
+    static ObtenerEquipos() {
         return new Promise( function(resolve) {
             
             var equipos = [];
