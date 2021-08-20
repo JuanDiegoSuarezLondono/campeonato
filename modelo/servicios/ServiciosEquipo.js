@@ -1,45 +1,27 @@
-var formulario = document.getElementById('formulario');
+import Equipo from "../Equipo.js";
 
-import ('../Equipo');
-
-formulario.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    var datos = new FormData(formulario);
-    
-    ServiciosEquipo.obtenerEquipos();
-    /*fetch('http://localhost/campeonato_api/equipos.php',{
-        method: 'POST',
-        mode: 'cors',
-        body: datos,
-    })
-    .then( res => res.json())
-    .then( data => {
-        console.log(data[1].nombre);
-    })*/
-    
-})
-
-class ServiciosEquipo {
-    
+export default class ServiciosEquipo {    
+       
     constructor(){}
     
-    static obtenerEquipos()  {
-        
-        var equipos = [];
-        
-        fetch('http://localhost/campeonato_api/equipos.php',{
-        method: 'GET',
-        mode: 'cors',
-        })
-        .then( res => res.json())
-        .then( data => {
-            data.forEach(equipo => {
-                equipos.push(new Equipo(equipo.id, equipo.nombre));
-            });
-            return equipos;
-        })
-    }   
+    static obtenerEquipos() {
+
+        return new Promise( function(resolve) {
+            
+            var equipos = [];
+            
+            fetch('http://localhost/campeonato_api/equipos.php',{
+                method: 'GET',
+                mode: 'cors',
+            })
+            .then( res => res.json())
+            .then( data => {
+                data.forEach(equipo => {
+                    equipos.push(new Equipo(equipo.id, equipo.nombre));
+                });
+                resolve(equipos);
+            })
+        });
+    }  
 }
 
