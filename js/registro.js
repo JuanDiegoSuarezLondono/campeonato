@@ -35,4 +35,5 @@ formulario.addEventListener('submit', async function(e) {
     datos.append("visitante",selectVisitante);
     datos.append("fecha",datosFormulario.get("fecha"));
     ServiciosPartido.AgregarPartido(datos);
+    document.location.href = '../partidos.html';
 })

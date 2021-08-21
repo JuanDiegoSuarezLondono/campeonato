@@ -26,7 +26,7 @@ window.onload = async function(){
         selectLocal.appendChild(fila);
         fila.addEventListener("click", async function(e) {
             e.preventDefault();
-            console.log(fila.id);
+            document.location.href = '../editar_partido.html?id='+fila.id;
         })
     });
 
