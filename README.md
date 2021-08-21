@@ -7,8 +7,8 @@ Sistema web soportado en arquitectura API REST que permite el registro y autenti
 - En el proceso de desarrollo del sistema se debe utilizar un repositorio de código Git y subirlo a GitHub
 - El sistema web debe permitir la creación de usuarios indicando su nombre, correo, username y password
 - Una vez el usuario a iniciado sesión se debe presentar por medio de una interfaz web las siguientes opciones:
- - Registrar Partido.
- - Ver Partidos
+  - Registrar Partido.
+  - Ver Partidos
 - Al ingresar a la opción de “Registrar Partido” se le debe presentar una página web con un formulario HTML solicitando la información del partido al usuario
 - Al agregar un nuevo partido se debe registrar: fecha, equipo local y equipo visitante
  - En el formulario de partido se debe hacer uso del elemento HTML select para la selección de los equipos (local y visitante), en cada opción del select se debe presentar el nombre del equipo
