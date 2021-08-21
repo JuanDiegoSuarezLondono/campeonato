@@ -7,7 +7,7 @@ formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
     var datosFormulario = new FormData(formulario);
     var usuario = await ServiciosUsuario.LogIn(datosFormulario);
-    usuario != false ? document.location.href = '../interfaces/bienvenido.html?id='+usuario.id+'&nombre='+usuario.nombre : console.log("Se denego la entrada");
+    usuario != false ? document.location.href = '../interfaces/bienvenido.html?id='+usuario.id+'&nombre='+usuario.nombre : alert("La combinación usuario y contraseña no se encontró  :c");
 })
 
 btnSign.addEventListener('click', async function(e) {

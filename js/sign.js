@@ -11,10 +11,10 @@ formulario.addEventListener('submit', async function(e) {
         datos.append("correo",datosFormulario.get("correo"));
         datos.append("username",datosFormulario.get("username"));
         datos.append("password",datosFormulario.get("new-pass"));
-        ServiciosUsuario.AgregarUsuario(datos);
-        document.location.href = '../index.html';
+        var res = await ServiciosUsuario.AgregarUsuario(datos);
+        res == false ? alert("El correo o el nombre de usuario ya esta en uso") : document.location.href = '../index.html';
     } else {
-        console.log("Contraseñas diferentes");
+        alert("Las contraseñas deben coincidir.");
     }
     
 })
