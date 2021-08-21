@@ -6,12 +6,12 @@ var btnSign = document.getElementById('sign');
 formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
     var datosFormulario = new FormData(formulario);
-    var id = await ServiciosUsuario.LogIn(datosFormulario);
-    id != false ? document.location.href = '../otra.html?id='+id : console.log("Imprimir algo");
+    var usuario = await ServiciosUsuario.LogIn(datosFormulario);
+    usuario != false ? document.location.href = '../interfaces/bienvenido.html?id='+usuario.id+'&nombre='+usuario.nombre : console.log("Se denego la entrada");
 })
 
 btnSign.addEventListener('click', async function(e) {
     e.preventDefault();
-    document.location.href = '../sign-in.html'
+    document.location.href = '../interfaces/sign-in.html'
 })
 

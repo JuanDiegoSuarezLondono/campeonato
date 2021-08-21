@@ -3,13 +3,12 @@ import Partido from "../Partido.js";
 const URL = 'http://localhost/campeonato_api/partidos.php';
 
 export default class ServiciosPartido {    
+
     constructor(){}
     
     static async ObtenerPartidos() {
         return new Promise( function(resolve) {
-            
             var partidos = [];
-            
             fetch(URL,{
                 method: 'GET',
                 mode: 'cors',
@@ -19,11 +18,11 @@ export default class ServiciosPartido {
                 referrerPolicy: 'no-referrer',
             })
             .then( res => res.json())
-            .then( datos => {
-                datos.forEach(partido => {
+            .then( data => {
+                data.forEach(partido => {
                     partidos.push(new Partido(partido.id, partido.fecha, partido.equipo_local, partido.equipo_visitante, partido.goles_local, partido.goles_visitante));
                 });
-                resolve(partidos);
+                resolve(data == false ? false : partidos);
             })
         });
     } 
@@ -41,7 +40,7 @@ export default class ServiciosPartido {
             })
             .then( res => res.json())
             .then( data => {
-                console.log("Exito: "+data);
+                resolve(data == false ? false : data);
             })
         });
     } 
@@ -51,6 +50,10 @@ export default class ServiciosPartido {
             fetch(URL, {
                 method: 'PUT',
                 mode: 'cors',
+                cache: 'default',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
                 headers: {
                     "Content-Type": "application/json"
                   },
@@ -60,7 +63,7 @@ export default class ServiciosPartido {
             })
             .then( res => res.json())
             .then( data => {
-                console.log(data);
+                resolve(data == false ? false : data);
             })
         });
     }
@@ -70,6 +73,10 @@ export default class ServiciosPartido {
             fetch(URL, {
                 method: 'DELETE',
                 mode: 'cors',
+                cache: 'default',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
                 headers: {
                     "Content-Type": "application/json"
                   },
@@ -79,7 +86,7 @@ export default class ServiciosPartido {
             })
             .then( res => res.json())
             .then( data => {
-                console.log(data);
+                resolve(data == false ? false : data);
             })
         });
     } 

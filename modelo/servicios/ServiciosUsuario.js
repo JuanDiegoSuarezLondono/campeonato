@@ -1,5 +1,3 @@
-var formulario = document.getElementById('sign-in');
-
 const URL = "http://localhost/campeonato_api/";
 
 export default class ServiciosUsuario {    
@@ -19,14 +17,13 @@ export default class ServiciosUsuario {
             })
             .then( res => res.json())
             .then( data => {
-                resolve(data == false ? false : data.id);
+                resolve(data == false ? false : data);
             })
         });
     }  
 
     static AgregarUsuario(datos) {
         return new Promise( function(resolve) {
-            
             fetch(URL+'usuarios.php',{
                 method: 'POST',
                 mode: 'cors',
@@ -38,7 +35,7 @@ export default class ServiciosUsuario {
             })
             .then( res => res.json())
             .then( data => {
-                console.log(data);
+                resolve(data == false ? false : data);
             });
         });
     }

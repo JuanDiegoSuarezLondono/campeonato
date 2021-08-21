@@ -1,3 +1,7 @@
+if(document.referrer.substring(0,48) != 'http://127.0.0.1:8080/interfaces/bienvenido.html' && document.referrer.substring(0,52) != 'http://127.0.0.1:8080/interfaces/editar_partido.html' && document.referrer.substring(0,46) !='http://127.0.0.1:8080/interfaces/registro.html'){
+    document.location.href = '../index.html';
+}
+
 import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 
 window.onload = async function(){
@@ -26,7 +30,7 @@ window.onload = async function(){
         selectLocal.appendChild(fila);
         fila.addEventListener("click", async function(e) {
             e.preventDefault();
-            document.location.href = '../editar_partido.html?id='+fila.id;
+            document.location.href = '../interfaces/editar_partido.html?id='+fila.id;
         })
     });
 

@@ -1,24 +1,28 @@
 import Equipo from "../Equipo.js";
 
+const URL = 'http://localhost/campeonato_api/equipos.php';
+
 export default class ServiciosEquipo {    
        
     constructor(){}
     
     static ObtenerEquipos() {
         return new Promise( function(resolve) {
-            
             var equipos = [];
-            
-            fetch('http://localhost/campeonato_api/equipos.php',{
+            fetch(URL,{
                 method: 'GET',
                 mode: 'cors',
+                cache: 'default',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
             })
             .then( res => res.json())
             .then( data => {
                 data.forEach(equipo => {
                     equipos.push(new Equipo(equipo.id, equipo.nombre));
                 });
-                resolve(equipos);
+                resolve(data == false ? false : equipos);
             })
         });
     }  
