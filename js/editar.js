@@ -1,6 +1,6 @@
-if(document.referrer.substring(0,46) != window.location.origin+'/interfaces/partidos.html'){
+if( document.referrer.indexOf(window.location.origin+'/interfaces/partidos.html') == "-1"){
     document.location.href = '../index.html';
-}
+} 
 
 import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 

@@ -1,7 +1,7 @@
 
-if(document.referrer != window.location.origin+'/index.html'){
+if( document.referrer.indexOf(window.location.origin+'/index.html') == "-1"){
     document.location.href = '../index.html';
-}
+} 
 
 var btnRegistrar = document.getElementById('registrar');
 var btnVer = document.getElementById('ver-partidos');

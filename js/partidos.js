@@ -1,6 +1,6 @@
-if(document.referrer.substring(0,48) != window.location.origin+'/interfaces/bienvenido.html' && document.referrer.substring(0,52) != window.location.origin+'/interfaces/editar_partido.html' && document.referrer.substring(0,46) != window.location.origin+'/interfaces/registro.html'){
+if( document.referrer.indexOf(window.location.origin+'/interfaces/registro.html') == "-1" && document.referrer.indexOf(window.location.origin+'/interfaces/editar_partido.html') == "-1" && document.referrer.indexOf(window.location.origin+'/interfaces/bienvenido.html') == "-1"){
     document.location.href = '../index.html';
-}
+} 
 
 import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 
