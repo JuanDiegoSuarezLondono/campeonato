@@ -4,7 +4,21 @@ Sistema web soportado en arquitectura API REST que permite el registro y autenti
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+En el proceso de desarrollo del sistema se debe utilizar un repositorio de código Git y subirlo a GitHub
+• El sistema web debe permitir la creación de usuarios indicando su nombre, correo, username y password
+• Una vez el usuario a iniciado sesión se debe presentar por medio de una interfaz web las siguientes opciones:
+o Registrar Partido
+o Ver Partidos
+• Al ingresar a la opción de “Registrar Partido” se le debe presentar una página web con un formulario HTML solicitando la información del partido al usuario
+• Al agregar un nuevo partido se debe registrar: fecha, equipo local y equipo visitante
+o En el formulario de partido se debe hacer uso del elemento HTML select para la selección de los equipos (local y visitante), en cada opción del select se debe presentar el nombre del equipo
+o Después de crear un partido el sistema debe direccionarse a la opción “Ver Partidos”
+o En la información del partido debe quedar registrado que usuario lo creó
+• Al ingresar a la opción de “Ver Partidos”, el sistema debe mostrar en una página HTML el listado de partidos registrados ordenados por fecha del más reciente al más antiguo indicando la fecha, los nombres de los 2 equipos enfrentados y el resultado del partido
+o Queda a decisión del desarrollador la forma en cómo se mostrará esta información
+• En caso de que el partido a mostrar no se haya jugado aún (no se han registrado goles), el usuario podrá hacer click sobre el partido y será direccionado a otra página HTML en donde podrá actualizar el marcador del partido
+o Después de actualizar un marcador el sistema debe direccionarse a la opción “Ver Partidos”
+• Todas las páginas HTML deben tener aplicado un estilo CSS propio en donde se definan las reglas de ubicación de elementos, tamaño, etc… (no se permite el uso de ningún framework CSS)
 
 ## Getting Started
 
