@@ -24,48 +24,22 @@ export default class ServiciosUsuario {
         });
     }  
 
-    static AgregarUsuario() {
+    static AgregarUsuario(datos) {
         return new Promise( function(resolve) {
             
-            var equipos = [];
-            
-            fetch('http://localhost/campeonato_api/equipos.php',{
-                method: 'GET',
+            fetch(URL+'usuarios.php',{
+                method: 'POST',
                 mode: 'cors',
+                cache: 'default',
+                credentials: 'same-origin',
+                redirect: 'follow',
+                referrerPolicy: 'no-referrer',
+                body: datos,
             })
             .then( res => res.json())
             .then( data => {
-                data.forEach(equipo => {
-                    equipos.push(new Equipo(equipo.id, equipo.nombre));
-                });
-                resolve(equipos);
-            })
+                console.log(data);
+            });
         });
-    }  
+    }
 }
-
-/*formulario.addEventListener('submit', function(e){
-
-    e.preventDefault();
-
-    var fomrData = new FormData(formulario);
-    var datos = new FormData();
-
-    datos.append("nombre",fomrData.get("nombre"));
-    datos.append("correo",fomrData.get("correo"));
-    datos.append("username",fomrData.get("username"));
-    datos.append("password",fomrData.get("new-pass"));
-    
-    fetch(URL+'usuarios.php',{
-        method: 'POST',
-        mode: 'cors',
-        body: datos,
-    })
-    .then( res => res.json())
-    .then( data => {
-        console.log(data);
-    })
-    
-})*/
-
-

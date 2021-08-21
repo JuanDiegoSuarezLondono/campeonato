@@ -7,7 +7,7 @@ formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
     var datosFormulario = new FormData(formulario);
     var id = await ServiciosUsuario.LogIn(datosFormulario);
-    id != false ? document.location.href = '../otra.html' : console.log("Imprimir algo");
+    id != false ? document.location.href = '../otra.html?id='+id : console.log("Imprimir algo");
 })
 
 btnSign.addEventListener('click', async function(e) {
