@@ -1,6 +1,6 @@
 import ServiciosUsuario from "../modelo/servicios/ServiciosUsuario.js";
 
-var formulario = document.getElementById('log-in');
+var formulario = document.getElementById('loginform');
 var btnSign = document.getElementById('sign');
 
 formulario.addEventListener('submit', async function(e) {

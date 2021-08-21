@@ -12,6 +12,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction:column;
     
     margin: 0;
     padding: 0;
@@ -20,39 +21,27 @@ body {
     width: 100%;
     height: 100%;
     
-    background-image: url(../assets/imagenes/login.jpg);
+    background-image: url(../assets/imagenes/fondo.jpg);
     background-position: center;
     background-size: cover;
 }
 
-#contenedorcentrado {
+#titulo {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
-    
-    min-width: 380px;
-    max-width: 900px;
-    width: 90%;
-    
-    background-color: #5f6769;
-    
-    border-radius: 10px 10px 10px 10px;
-    -moz-border-radius: 10px 10px 10px 10px;
-    -webkit-border-radius: 10px 10px 10px 10px;
-    
-    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-    
-    padding: 30px;
-    box-sizing: border-box;
+    flex-direction:column;
+    margin-bottom: 10px;
+    max-width: 920px;
+    min-width: 820px;
+    background-color: rgba(69, 82, 82, 0.6);
+    color: rgb(255, 255, 255);
 }
 
-#login {
+#contenedorcentrado {
     width: 100%;
-    max-width: 320px;
-    min-width: 320px;
+    max-width: 720px;
+    min-width: 720px;
     padding: 30px 30px 50px 30px;
     background-color: #719192;
     
@@ -70,16 +59,17 @@ body {
     filter: alpha(opacity=1);
 }
 
-#login label {
+#contenedorcentrado label {
     display: block;
     font-family: 'Overpass', sans-serif;
     font-size: 120%;
     color:#3c4245;
+    margin-bottom: 10px;
     
     margin-top: 15px;
 }
 
-#login input {
+#contenedorcentrado input, select {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color: #1b262c;
@@ -99,16 +89,16 @@ body {
     -webkit-border-radius: 3px 3px 3px 3px;
 }
 
-#login input::placeholder {
+#contenedorcentrado input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #E4E4E4;
 }
 
-#login button {
+#contenedorcentrado button {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color:#1b262c;
-    width: 100%;
+    width: 50%;
     height: 40px;
     border: none;
     
@@ -118,84 +108,30 @@ body {
     
     background-color: #dfcdc3;
     
-    margin-top: 10px;
+    margin-left: 12vw;
+    margin-top: 40px;
 }
 
-#login button:hover {
+#contenedorcentrado button:hover {
     background-color: #3c4245;
     color:#dfcdc3;
 }
 
-#derecho {
-    text-align: center;
-    width: 100%;
-    
-    opacity: 0.70;
-    filter: alpha(opacity=70);
-    
-    padding:20px 20px 20px 50px;
-    box-sizing: border-box;
-}
-
-.titulo {
-    font-size: 300%;
-    color:#dfcdc3;
-}
-
-hr {
-    border-top: 1px solid #8c8b8b;
-	border-bottom: 1px solid #dfcdc3;
-    
-}
-.pie-form {
-    font-size: 90%;
-    text-align: center;    
-    margin-top: 15px;
-}
-
-.pie-form a {
-    display: block;
-    text-decoration: none;
-    color: #dfcdc3;
-    margin-bottom: 3px;
-}
-
-.pie-form a:hover {
-    color: #719192;
+#selects{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction:row;
 }
 
 @media all and (max-width: 775px)
 {
-    #contenedorcentrado {
-        flex-direction:column-reverse;
-
-        min-width: 380px;
-        max-width: 900px;
-        width: 90%;
-
-        background-color: #5f6769;
-
-        border-radius: 10px 10px 10px 10px;
-        -moz-border-radius: 10px 10px 10px 10px;
-        -webkit-border-radius: 10px 10px 10px 10px;
-
-        -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-        -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-        box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
-
-        padding: 30px;
-        box-sizing: border-box;
-    }
     
-    #login {
+    #contenedorcentrado {
         margin: 0 auto;
     }
     
-    #derecho {
-        padding:20px 20px 20px 20px;
-    }
-    
-    #login label {
+    #contenedorcentrado label {
         text-align: left;
     }
 }

@@ -3,7 +3,6 @@ body {
     font-weight: normal;
     font-size: 100%;
     color: #1b262c;
-    
     margin: 0;
     background-color: #5f6769;
 }
@@ -20,7 +19,7 @@ body {
     width: 100%;
     height: 100%;
     
-    background-image: url(../assets/imagenes/login.jpg);
+    background-image: url(../assets/imagenes/signin.jpg);
     background-position: center;
     background-size: cover;
 }
@@ -29,7 +28,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction:row;
+    flex-direction:column;
     
     min-width: 380px;
     max-width: 900px;
@@ -49,10 +48,25 @@ body {
     box-sizing: border-box;
 }
 
-#login {
+#encabezado{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+}
+
+#encabezado h1 {
+    color: white;
+}
+
+#encabezado h4 {
+    color: white;
+}
+
+#sigin {
     width: 100%;
-    max-width: 320px;
-    min-width: 320px;
+    max-width: 520px;
+    min-width: 520px;
     padding: 30px 30px 50px 30px;
     background-color: #719192;
     
@@ -70,7 +84,7 @@ body {
     filter: alpha(opacity=1);
 }
 
-#login label {
+#sigin label {
     display: block;
     font-family: 'Overpass', sans-serif;
     font-size: 120%;
@@ -79,7 +93,7 @@ body {
     margin-top: 15px;
 }
 
-#login input {
+#sigin input {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color: #1b262c;
@@ -99,12 +113,12 @@ body {
     -webkit-border-radius: 3px 3px 3px 3px;
 }
 
-#login input::placeholder {
+#sigin input::placeholder {
     font-family: 'Overpass', sans-serif;
     color: #E4E4E4;
 }
 
-#login button {
+#sigin button {
     font-family: 'Overpass', sans-serif;
     font-size: 110%;
     color:#1b262c;
@@ -121,55 +135,16 @@ body {
     margin-top: 10px;
 }
 
-#login button:hover {
+#sigin button:hover {
     background-color: #3c4245;
     color:#dfcdc3;
 }
 
-#derecho {
-    text-align: center;
-    width: 100%;
-    
-    opacity: 0.70;
-    filter: alpha(opacity=70);
-    
-    padding:20px 20px 20px 50px;
-    box-sizing: border-box;
-}
-
-.titulo {
-    font-size: 300%;
-    color:#dfcdc3;
-}
-
-hr {
-    border-top: 1px solid #8c8b8b;
-	border-bottom: 1px solid #dfcdc3;
-    
-}
-.pie-form {
-    font-size: 90%;
-    text-align: center;    
-    margin-top: 15px;
-}
-
-.pie-form a {
-    display: block;
-    text-decoration: none;
-    color: #dfcdc3;
-    margin-bottom: 3px;
-}
-
-.pie-form a:hover {
-    color: #719192;
-}
 
 @media all and (max-width: 775px)
 {
     #contenedorcentrado {
-        flex-direction:column-reverse;
-
-        min-width: 380px;
+        min-width: 520px;
         max-width: 900px;
         width: 90%;
 
@@ -187,15 +162,11 @@ hr {
         box-sizing: border-box;
     }
     
-    #login {
+    #sigin {
         margin: 0 auto;
     }
     
-    #derecho {
-        padding:20px 20px 20px 20px;
-    }
-    
-    #login label {
+    #sigin label {
         text-align: left;
     }
 }

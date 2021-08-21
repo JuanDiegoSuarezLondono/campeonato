@@ -13,10 +13,10 @@ nombre.innerHTML = "Que bueno que estas aqui "+parametros.nombre;
 
 btnRegistrar.addEventListener("click", async function(e) {
     e.preventDefault();
-    document.location.href = '../interfaces/registro.html?id='+parametros.id;
+    document.location.href = '../interfaces/registro.html?id='+parametros.id+'&nombre='+parametros.nombre;
 })
 
 btnVer.addEventListener("click", async function(e) {
     e.preventDefault();
-    document.location.href = '../interfaces/partidos.html';
+    document.location.href = '../interfaces/partidos.html?id='+parametros.id+'&nombre='+parametros.nombre;
 })

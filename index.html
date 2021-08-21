@@ -2,29 +2,51 @@
   <html>
     <title>Campeonato</title>
     <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta name="viewport" />
+
+      <title> Campeonato </title>  
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="author" content="Juan Diego Suárez Londoño">
+      <meta name="description" content="Ejercicio de pagina Campeonato">
+      <meta name="keywords" content="campeonato,formadores, unab, javascript">
+
+      <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet"> 
+
+      <link rel="stylesheet" href="css/index.css">
+
     </head>
 
     <body>
-      <div>
-        <h3>¡Bienvenido al Campeonato!</h3>
-        <h5>Ingresa tus datos para entrar</h5>
-        <form id="log-in">
-          <div>
-            <label for="usuario">Correo o usuario</label>
-            <input type="text" name="usuario" required>
+      <div id="contenedor">
+        <div id="contenedorcentrado">
+          <div id="login">
+            <form id="loginform">
+  
+              <label for="usuario">Correo o usuario</label>
+              <input type="text" name="usuario" placeholder="Usuario" required> 
+                
+              <label for="password">Contraseña</label>
+              <input type="password" name="password" placeholder="Contraseña" required>
+              
+              <p>
+                <button type="submit" id="log">Entrar</button>
+              </p>
+            </form>
           </div>
-
-          <div>
-            <label for="password">Contraseña</label>
-            <input type="password" name="password" required>
+  
+          <div id="derecho">
+            <div class="titulo">
+              ¡Bienvenido al Campeonato!
+            </div>
+            <hr>
+              <div class="pie-form">
+                  <a href="#" id="sign">¿No tienes Cuenta? Registrate</a>
+              </div>
+            <hr>
           </div>
-          
-          <p>
-            <button type="submit" id="log">Entrar</button>
-            <button type="button" id="sign">¡Registrate!</button>
-          </p>
-        </form>
+  
+        </div>
       </div>
       <script type="module" src="js/index.js"></script>
     </body>

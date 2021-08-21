@@ -4,6 +4,11 @@ if(document.referrer.substring(0,48) != 'http://127.0.0.1:8080/interfaces/bienve
 
 import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 
+var btnAgregar = document.getElementById('agregar');
+
+const buscarParametrosURL = new URLSearchParams(window.location.search);
+const parametros = Object.fromEntries(buscarParametrosURL.entries());
+
 window.onload = async function(){
     var partidos  = await ServiciosPartido.ObtenerPartidos();
 
@@ -30,9 +35,13 @@ window.onload = async function(){
         selectLocal.appendChild(fila);
         fila.addEventListener("click", async function(e) {
             e.preventDefault();
-            document.location.href = '../interfaces/editar_partido.html?id='+fila.id;
+            document.location.href = '../interfaces/editar_partido.html?fid='+fila.id+'&id='+parametros.id+'&nombre='+parametros.nombre;
         })
     });
 
 };
 
+btnAgregar.addEventListener("click", async function(e) {
+    e.preventDefault();
+    document.location.href = '../interfaces/registro.html?id='+parametros.id+'&nombre='+parametros.nombre;
+})

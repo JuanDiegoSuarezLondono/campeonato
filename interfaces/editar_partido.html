@@ -3,30 +3,34 @@
   <title>Campeonato</title>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="../css/editar.css">
   </head>
 
   <body>
-      <div>
-      <h3>Registrar Partidos</h3>
-      <h5>Ingresa tu partido</h5>
-      <article >
-          <form id="editar">
-              <div>
-                <label for="goles_local">Goles Locales</label>
-                <input type="number" name="goles_local" required>
-              </div>
-              <div>
-                <label for="goles_visitante">Goles Visitante</label>
-                <input type="number" name="goles_visitante" required>
-              </div>
-              <p>
-                  <button type="submit">Enviar</button>
-                  <button type="button" id="borrar">Borrar</button>
-              </p>
-          </form>
-        </article>
-        <body>
-      </body>
+    <div id="contenedor">
+      <div id="titulo">
+        <h1>Editar Partido</h1>
+        <h3>¿Cual fue el resultado?</h3>
+      </div>
+      <div id="contenedorcentrado">
+        <form id="editar">
+          <div id="selects">
+            <div>
+              <label for="goles_local">Goles Locales</label>
+              <input type="number" name="goles_local" min="0" step="1" required>
+            </div>
+            <div>
+              <label for="goles_visitante">Goles Visitante</label>
+              <input type="number" name="goles_visitante" min="0" step="1" required>
+            </div>
+          </div>
+          <div id="botones">
+            <button type="submit" id="enviar">Enviar</button>
+            <button type="button" id="borrar">Borrar</button>
+          </div>
+        </form>
+      </div>
+    </div>
     <script  type="module" src="../js/editar.js"></script>
   </body>
 </html>

@@ -4,13 +4,18 @@
     <title>Campeonato</title>
     <head>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <link rel="stylesheet" href="../css/partidos.css">
     </head>
 
     <body>
-      
-        <div>
-        <h3>Lista de partidos</h3>
-        <article >
+      <div id="contenedor">
+
+        <div id="titulo">
+          <h1>Lista de partidos</h1>
+          <h3>Selecciona uno si quieres editar los goles</h3>
+        </div>
+
+        <div id="contenedorcentrado">
           <table id="tabla-partidos">
             <tr>
               <th>Fecha</th>
@@ -19,12 +24,11 @@
               <th>Equipo Visitante</th>
               <th>Goles Visitante</th>
             </tr>
-            <tr>
-            </tr>
           </table>
-          </article>
-          <body>
-        </body>
+          <button type="button" id="agregar">Agregar</button>
+        </div>
+          
+      </div>      
       <script  type="module" src="../js/partidos.js"></script>
     </body>
   </html>

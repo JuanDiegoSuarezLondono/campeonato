@@ -1,4 +1,4 @@
-if(document.referrer != 'http://127.0.0.1:8080/interfaces/partidos.html'){
+if(document.referrer.substring(0,46) != 'http://127.0.0.1:8080/interfaces/partidos.html'){
     document.location.href = '../index.html';
 }
 
@@ -14,18 +14,18 @@ formulario.addEventListener('submit', async function(e) {
     e.preventDefault();
     var datosFormulario = new FormData(formulario);
     var data = {
-        'id' : parametros.id,
+        'id' : parametros.fid,
         'goles_local' : datosFormulario.get("goles_local"),
         'goles_visitante' : datosFormulario.get("goles_visitante"),
     };
     ServiciosPartido.EditarPartido(data);
-    document.location.href = '../interfaces/partidos.html';
+    document.location.href = '../interfaces/partidos.html?id='+parametros.id+'&nombre='+parametros.nombre;
 })
 btnBorrar.addEventListener('click', async function(e) {
     e.preventDefault();
     var data = {
-        'id' : parametros.id,
+        'id' : parametros.fid,
     };
     ServiciosPartido.BorrarPartido(data);
-    document.location.href = '../interfaces/partidos.html';
+    document.location.href = '../interfaces/partidos.html?id='+parametros.id+'&nombre='+parametros.nombre;
 })

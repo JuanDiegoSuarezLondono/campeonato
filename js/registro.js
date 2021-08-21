@@ -1,11 +1,11 @@
-if(document.referrer.substring(0,48) != 'http://127.0.0.1:8080/interfaces/bienvenido.html'){
+if(document.referrer.substring(0,48) != 'http://127.0.0.1:8080/interfaces/bienvenido.html' && document.referrer.substring(0,46) !='http://127.0.0.1:8080/interfaces/partidos.html'){
     document.location.href = '../index.html';
 }
 
 import ServiciosEquipo from "../modelo/servicios/ServiciosEquipo.js";
 import ServiciosPartido from "../modelo/servicios/ServiciosPartido.js";
 
-var formulario = document.getElementById('log-in');
+var formulario = document.getElementById('registro');
 const buscarParametrosURL = new URLSearchParams(window.location.search);
 const parametros = Object.fromEntries(buscarParametrosURL.entries());
 
@@ -36,5 +36,5 @@ formulario.addEventListener('submit', async function(e) {
     datos.append("visitante",selectVisitante);
     datos.append("fecha",datosFormulario.get("fecha"));
     ServiciosPartido.AgregarPartido(datos);
-    document.location.href = '../interfaces/partidos.html';
+    document.location.href = '../interfaces/partidos.html?id='+parametros.id+'&nombre='+parametros.nombre;
 })
