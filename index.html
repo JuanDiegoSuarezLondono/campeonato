@@ -16,53 +16,16 @@
           </div>
 
           <div>
-            <label for="pass">Contraseña</label>
-            <input type="password" name="pass" required>
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" required>
           </div>
           
           <p>
-            <button type="submit" onClick="javascript:window.location.href='/otra.html'">Entrar</button>
-            <button type="button">¡Registrate!</button>
+            <button type="submit" id="log">Entrar</button>
+            <button type="button" id="sign">¡Registrate!</button>
           </p>
         </form>
-
-        <div>
-          <div>
-            <form id="sign-in">
-              <div>
-                <label for="nombre">Nos interesa conocerte ¿Como te llamas?</label>
-                <input type="text" name="nombre" required>
-              </div>
-    
-              <div>
-                <label for="correo">Danos un correo electronico para mantenerte al tanto</label>
-                <input type="email" name="correo" required>
-              </div>
-
-              <div>
-                <label for="username">¿Como prefieres que te digamos?</label>
-                <input type="text" name="username" required>
-              </div>
-                    
-              <div>
-                <label for="new-pass">Pongámosela difícil a los maleantes, dame una contraseña </label>
-                <input type="password" name="new-pass" required>
-              </div>
-
-              <div>
-                <label for="conf-new-pass">Dame esa contraseña de nuevo para verificar</label>
-                <input type="password" name="conf-new-pass" required>
-              </div>
-              
-              <div>
-                <button type="submit">Enviar</button>
-              </div>
-            </form>
-          </div>
-        </div>
-        </div>
-
-      <script type="text/javascript" src="js/index.js"></script>
-      <script type="text/javascript" src="modelo/servicios/ServiciosUsuario.js"></script>
+      </div>
+      <script type="module" src="js/index.js"></script>
     </body>
   </html>

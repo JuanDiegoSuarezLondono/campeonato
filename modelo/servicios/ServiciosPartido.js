@@ -1,5 +1,7 @@
 import Partido from "../Partido.js";
 
+const URL = 'http://localhost/campeonato_api/partidos.php';
+
 export default class ServiciosPartido {    
     constructor(){}
     
@@ -8,7 +10,7 @@ export default class ServiciosPartido {
             
             var partidos = [];
             
-            fetch('http://localhost/campeonato_api/partidos.php',{
+            fetch(URL,{
                 method: 'GET',
                 mode: 'cors',
                 cache: 'default',
@@ -28,7 +30,7 @@ export default class ServiciosPartido {
     
     static async AgregarPartido(datos) {
         return new Promise( function(resolve) {                
-            fetch('http://localhost/campeonato_api/partidos.php',{
+            fetch(URL,{
                 method: 'POST',
                 mode: 'cors',
                 cache: 'default',
@@ -46,8 +48,27 @@ export default class ServiciosPartido {
 
     static async EditarPartido(datos) {
         return new Promise(function (resolve) {
-            fetch('http://localhost/campeonato_api/partidos.php', {
+            fetch(URL, {
                 method: 'PUT',
+                mode: 'cors',
+                headers: {
+                    "Content-Type": "application/json"
+                  },
+                body: JSON.stringify({
+                    "payload": datos
+                  })
+            })
+            .then( res => res.json())
+            .then( data => {
+                console.log(data);
+            })
+        });
+    }
+    
+    static async BorrarPartido(datos) {
+        return new Promise(function (resolve) {
+            fetch(URL, {
+                method: 'DELETE',
                 mode: 'cors',
                 headers: {
                     "Content-Type": "application/json"
