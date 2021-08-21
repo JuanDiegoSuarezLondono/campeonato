@@ -11,20 +11,23 @@ Sistema web soportado en arquitectura API REST que permite el registro y autenti
   - Ver Partidos
 - Al ingresar a la opción de “Registrar Partido” se le debe presentar una página web con un formulario HTML solicitando la información del partido al usuario
 - Al agregar un nuevo partido se debe registrar: fecha, equipo local y equipo visitante
- - En el formulario de partido se debe hacer uso del elemento HTML select para la selección de los equipos (local y visitante), en cada opción del select se debe presentar el nombre del equipo
- - Después de crear un partido el sistema debe direccionarse a la opción “Ver Partidos”
- - En la información del partido debe quedar registrado que usuario lo creó
+  - En el formulario de partido se debe hacer uso del elemento HTML select para la selección de los equipos (local y visitante), en cada opción del select se debe presentar el nombre del equipo
+  - Después de crear un partido el sistema debe direccionarse a la opción “Ver Partidos”
+  - En la información del partido debe quedar registrado que usuario lo creó
 - Al ingresar a la opción de “Ver Partidos”, el sistema debe mostrar en una página HTML el listado de partidos registrados ordenados por fecha del más reciente al más antiguo indicando la fecha, los nombres de los 2 equipos enfrentados y el resultado del partido
- - Queda a decisión del desarrollador la forma en cómo se mostrará esta información
+  - Queda a decisión del desarrollador la forma en cómo se mostrará esta información
 - En caso de que el partido a mostrar no se haya jugado aún (no se han registrado goles), el usuario podrá hacer click sobre el partido y será direccionado a otra página HTML en donde podrá actualizar el marcador del partido
- - Después de actualizar un marcador el sistema debe direccionarse a la opción “Ver Partidos”
+  - Después de actualizar un marcador el sistema debe direccionarse a la opción “Ver Partidos”
 - Todas las páginas HTML deben tener aplicado un estilo CSS propio en donde se definan las reglas de ubicación de elementos, tamaño, etc… (no se permite el uso de ningún framework CSS)
 
-## Getting Started
+## Comencemos
 
-### Dependencies
+### Requisitos previos
 
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
+En un servidor linux instalar lo siguiente:
+
+* Apache: "sudo apt-get install apache2".
+* Mysql: "sudo apt-get install mysql-server".
 * ex. Windows 10
 
 ### Installing
