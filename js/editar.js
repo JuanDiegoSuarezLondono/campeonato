@@ -1,4 +1,4 @@
-if(document.referrer.substring(0,46) != 'http://127.0.0.1:8080/interfaces/partidos.html'){
+if(document.referrer.substring(0,46) != window.location.origin+'/interfaces/partidos.html'){
     document.location.href = '../index.html';
 }
 

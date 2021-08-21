@@ -1,4 +1,4 @@
-if(document.referrer.substring(0,48) != 'http://127.0.0.1:8080/interfaces/bienvenido.html' && document.referrer.substring(0,52) != 'http://127.0.0.1:8080/interfaces/editar_partido.html' && document.referrer.substring(0,46) !='http://127.0.0.1:8080/interfaces/registro.html'){
+if(document.referrer.substring(0,48) != window.location.origin+'/interfaces/bienvenido.html' && document.referrer.substring(0,52) != window.location.origin+'/interfaces/editar_partido.html' && document.referrer.substring(0,46) != window.location.origin+'/interfaces/registro.html'){
     document.location.href = '../index.html';
 }
 

@@ -1,4 +1,5 @@
-if(document.referrer != 'http://127.0.0.1:8080/index.html'){
+
+if(document.referrer != window.location.origin+'/index.html'){
     document.location.href = '../index.html';
 }
 

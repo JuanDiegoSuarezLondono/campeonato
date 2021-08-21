@@ -28,6 +28,7 @@ En un servidor linux instalar lo siguiente:
 
 * Apache: "sudo apt-get install apache2".
 * Mysql: "sudo apt-get install mysql-server".
+* PHP: "apt-get install php libapache2-mod-php php-mysql".
 * ex. Windows 10
 
 ### Installing
