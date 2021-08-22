@@ -2,7 +2,7 @@
 $db = [
     'host' => 'localhost',
     'username' => 'root',
-    'password' => '',
+    'password' => 'password',
     'db' => 'bd_campeonato',
 ];
 
