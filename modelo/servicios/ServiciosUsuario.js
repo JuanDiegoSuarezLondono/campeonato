@@ -1,4 +1,4 @@
-const URL = "http://localhost/campeonato_api/";
+const URL = window.location.origin+"/campeonato_api/";
 
 export default class ServiciosUsuario {    
        
