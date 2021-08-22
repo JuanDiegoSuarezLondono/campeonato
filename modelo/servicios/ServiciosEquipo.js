@@ -1,6 +1,6 @@
 import Equipo from "../Equipo.js";
 
-const URL = window.location.origin+'/campeonato_api/equipos.php';
+const URL = window.location.origin+'/campeonato_API/equipos.php';
 
 export default class ServiciosEquipo {    
        

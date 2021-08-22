@@ -1,6 +1,6 @@
 import Partido from "../Partido.js";
 
-const URL = window.location.origin+'/campeonato_api/partidos.php';
+const URL = window.location.origin+'/campeonato_API/partidos.php';
 
 export default class ServiciosPartido {    
 
