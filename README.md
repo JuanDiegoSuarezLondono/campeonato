@@ -203,7 +203,7 @@ sudo cp -a /home/ubuntu/campeonato/. /var/www/html/
 ```
 cd /var/www/html/
 ```
-Y listamos los archivos y carpetas con el comando `ls`. El sitio web se podrá ver en la dirección de nuestro servidor, en el caso de este ejercicio es *“http://54.232.133.136/”* donde podrá hacer uso de la página montada para esta probar e ilustrar esta guía.
+Y listamos los archivos y carpetas con el comando `ls`. El sitio web se podrá ver en la dirección de nuestro servidor, en el caso de este ejercicio es *“[54.232.133.136](http://54.232.133.136/)”* donde podrá hacer uso de la página montada para probar e ilustrar esta guía.
 
 ## Imagenes del la pagina Campeonato
 
