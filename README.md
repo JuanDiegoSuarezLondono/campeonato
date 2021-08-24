@@ -205,7 +205,6 @@ cd /var/www/html/
 ```
 Y listamos los archivos y carpetas con el comando `ls`. El sitio web se podrá ver en la dirección de nuestro servidor, en el caso de este ejercicio es *“[54.232.133.136](http://54.232.133.136/)”* donde podrá hacer uso de la página montada para probar e ilustrar esta guía.
 
-<<<<<<< HEAD
 **Nota:** La instancia puede haberse dado de baja al momento de leer esto y la pagina por ende no estar en funcionamiento.
 
 ## Imagenes del la pagina Campeonato
@@ -247,4 +246,3 @@ This project is licensed under the The MIT License (MIT) License - see the LICEN
 ## License
 
 This project is licensed under the The MIT License (MIT) License - see the LICENSE.md file for details
->>>>>>> 842def9d31dc119e7a9c39cc78caac9c91af4b27
