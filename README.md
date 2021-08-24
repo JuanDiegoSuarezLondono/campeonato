@@ -54,28 +54,27 @@ Antes que nada, se necesitan 3 programas básicos para correr la página. A cont
 sudo apt-get install apache2
 ```
 Para verificar la correcta instalación usamos el comando `systemctl status apache2`, dando un resultado parecido a este:
->
-● apache2.service - The Apache HTTP Server
-     Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
-     Active: active (running) since Sun 2021-08-22 05:53:56 UTC; 1 day 19h ago
-       Docs: https://httpd.apache.org/docs/2.4/
-    Process: 60709 ExecReload=/usr/sbin/apachectl graceful (code=exited, status=0/SUCCESS)
-   Main PID: 23258 (apache2)
-      Tasks: 7 (limit: 1160)
-     Memory: 20.7M
-     CGroup: /system.slice/apache2.service
-             ├─23258 /usr/sbin/apache2 -k start
-             ├─60716 /usr/sbin/apache2 -k start
-             ├─60717 /usr/sbin/apache2 -k start
-             ├─60718 /usr/sbin/apache2 -k start
-             ├─60719 /usr/sbin/apache2 -k start
-             ├─60720 /usr/sbin/apache2 -k start
-             └─60835 /usr/sbin/apache2 -k start
-
-Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Starting The Apache HTTP Server...
-Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Started The Apache HTTP Server.
-Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloading The Apache HTTP Server.
-Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloaded The Apache HTTP Server.<
+> ● apache2.service - The Apache HTTP Server
+>      Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
+>      Active: active (running) since Sun 2021-08-22 05:53:56 UTC; 1 day 19h ago
+>        Docs: https://httpd.apache.org/docs/2.4/
+>     Process: 60709 ExecReload=/usr/sbin/apachectl graceful (code=exited, status=0/SUCCESS)
+>    Main PID: 23258 (apache2)
+>       Tasks: 7 (limit: 1160)
+>      Memory: 20.7M
+>      CGroup: /system.slice/apache2.service
+>              ├─23258 /usr/sbin/apache2 -k start
+>              ├─60716 /usr/sbin/apache2 -k start
+>              ├─60717 /usr/sbin/apache2 -k start
+>              ├─60718 /usr/sbin/apache2 -k start
+>              ├─60719 /usr/sbin/apache2 -k start
+>              ├─60720 /usr/sbin/apache2 -k start
+>              └─60835 /usr/sbin/apache2 -k start
+> 
+> Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Starting The Apache HTTP Server...
+> Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Started The Apache HTTP Server.
+> Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloading The Apache HTTP Server.
+> Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloaded The Apache HTTP Server.<
 Además, si nos dirigimos a la dirección de la instancia, en este caso *“54.232.133.136”*, nos encontraremos con la página que muestra apache por defecto:
 
 ![image](https://user-images.githubusercontent.com/89165682/130542478-7a509856-95d4-46bb-9005-4f0333fa1efc.png)
@@ -85,9 +84,7 @@ Además, si nos dirigimos a la dirección de la instancia, en este caso *“54.2
 sudo apt-get install mysql-server
 ```
 Para verificar la correcta instalación usamos el comando `mysql --version`, dando un resultado parecido a este:
-```
-mysql  Ver 8.0.26-0ubuntu0.20.04.2 for Linux on x86_64 ((Ubuntu))
-```
+>mysql  Ver 8.0.26-0ubuntu0.20.04.2 for Linux on x86_64 ((Ubuntu))
 **3. PHP:**
 ```
 sudo apt-get install php libapache2-mod-php php-mysql
@@ -131,17 +128,87 @@ Si todo sale bien, este es el resultado:
 > Unpacking objects: 100% (12/12), 3.33 KiB | 1.11 MiB/s, done.
 Si ingresamos el comando `ls` podemos comprobar si los archivos han sido clonados:
 > campeonato  sqlCampeonato
-## Version History
+### Configuración del mysql
 
-* 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
-* 0.1
-    * Initial Release
+En este paso dejaremos la base de datos lista para ser consumida:
+
+1. Cargamos el sql clonado en el paso 3 de las descargas a nuestro mysql:
+
+```
+mysql < /home/ubuntu/sqlCampeonato/1049636949_script.sql
+```
+2.Ahora ingresamos a la mysql:
+
+```
+mysql
+```
+Y si queremos confirmar que la base de datos ha sido montada correctamente usamos el comando *‘show databases’* y veremos una con el nombre *`bd_campeonato`*:
+> +--------------------+
+> | Database           |
+> +--------------------+
+> | bd_campeonato      |
+> | information_schema |
+> | mysql              |
+> | performance_schema |
+> | sys                |
+> +--------------------+
+> 5 rows in set (0.02 sec)
+Y en ella podremos ver con el comando `use bd_campeonato` y `show tables` las entidades requeridas para el ejercicio:
+> +-------------------------+
+> | Tables_in_bd_campeonato |
+> +-------------------------+
+> | equipos                 |
+> | partidos                |
+> | usuarios                |
+> +-------------------------+
+> 3 rows in set (0.00 sec)
+**Nota:** La base de datos viene igualmente poblada con los siguientes datos por defecto:
+
+- Usuario:
+  - nombre: juan
+  - correo: juan@juan
+  - username: ju4n
+  - password: 1234
+- Equipos de fútbol: Nacional, Junior, Millonarios, Santa Fe, Chico, Deportivo Cali, America de Cali, DIM, AB y DT.
+
+3. Y una vez adentro definimos una clave para el usuario *‘root’* con el fin de que la API pueda conectarse a mysql:
+```
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+```
+Para salir solo esctibe `Exit`.
+### Despliegue del proyecto
+
+Este es el paso final, una vez terminados todos los preparativos vamos a mover el contenido de la carpeta clonada `campeonato` a el lugar donde esta nuestro apache. Para esto usamos el siguiente comando:
+
+```
+sudo cp -a /home/ubuntu/campeonato/. /var/www/html/
+```
+¡Y ya está! Podemos verificar que están los archivos si nos dirigimos al lugar donde fueron trasladados:
+```
+cd /var/www/html/
+```
+Y listamos los archivos y carpetas con el comando `ls`. El sitio web se podrá ver en la dirección de nuestro servidor, en el caso de este ejercicio es *“http://54.232.133.136/”* donde podrá hacer uso de la página montada para esta probar e ilustrar esta guía.
+
+## Imagenes del la pagina Campeonato
+
+### Pantalla de logueo
+![image](https://user-images.githubusercontent.com/89165682/130545295-d1438de7-e7bc-452a-8f00-3766c7945543.png)
+### Pantalla para registrarse
+![image](https://user-images.githubusercontent.com/89165682/130545319-de35c028-2e73-4ff6-b13b-d93580ccaba6.png)
+### Pantalla de bienvenida
+![image](https://user-images.githubusercontent.com/89165682/130545351-bc565933-9aae-456e-a29e-3e88fe7132d9.png)
+### Pantalla pra registrar un partido
+![image](https://user-images.githubusercontent.com/89165682/130545380-8f29afa1-4dda-4163-abdc-aab1f3eabe2d.png)
+### Pantalla para listar los partidos
+![image](https://user-images.githubusercontent.com/89165682/130545407-7a5ccef3-af15-4974-9df0-ffb3b440de92.png)
+### Pantalla para editar los goles de un partido
+![image](https://user-images.githubusercontent.com/89165682/130545436-7ded0c31-79f3-4b89-b181-ade0c14bf70c.png)
+
+**Nota:** La instancia puede haberse dado de baja al momento de leer esto.
 
 ## License
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
+This project is licensed under the The MIT License (MIT) License - see the LICENSE.md file for details
 
 ## Acknowledgments
 
