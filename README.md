@@ -22,18 +22,22 @@ Sistema web soportado en arquitectura API REST que permite el registro y autenti
 
 ## Comencemos
 
-web de campeonato solicitado como test para “formadores y tutores ciclo 3” desarrollado en html, css y javascript (para el front end), y php (para el back end) puros sin frameworks. Todo se realizará mediante un ejemplo implementado en un servidor desplegado en el servicio EC2 de Amazon AWS.
+En la siguiente guía se ilustrarán los pasos necesarios para poder implementar el sistema web de campeonato solicitado como test para “formadores y tutores ciclo 3” desarrollado en html, css y javascript (para el front end), y php (para el back end) puros sin frameworks. Todo se realizará mediante un ejemplo implementado en un servidor desplegado en el servicio EC2 de Amazon AWS.
 
-Nota: El front end y el back end están en el mismo repositorio con fines de agilizar el proceso de despliegue. El back end esta en el directorio “campeonato_API”.
+**Nota:** El front end y el back end están en el mismo repositorio con fines de agilizar el proceso de despliegue. El back end esta en el directorio “campeonato_API”.
 
-### Requisitos previos
+### Especificaciones del servidor usado
 
-En un servidor linux instalar lo siguiente:
+Para el despliegue de la página web se empleo un servidor “**Ubuntu Server 20.04 LTS (HVM), SSD Volume Type (64-bit (x86))**” con una instancia “t2micro” con las características de la siguiente tabla:
 
-* Apache: "sudo apt-get install apache2".
-* Mysql: "sudo apt-get install mysql-server".
-* PHP: "apt-get install php libapache2-mod-php php-mysql".
-* ex. Windows 10
+![Captura](https://user-images.githubusercontent.com/89165682/130540742-96215d4d-6555-49ee-8d61-362826080b81.PNG)
+
+Además, se habilitaron los puertos para permitir el trafico de todo tipo desde cualquier fuente (aunque sea poco seguro es solo para testear el proyecto).
+Se descarga la llave privada y se guarda en el equipo local para posteriormente acceder desde la consola local del ordenador o un programa tercero como “[MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)”. Las credenciales para acceder son:
+
+1. Public IPv4 DNS: ec2-54-232-133-136.sa-east-1.compute.amazonaws.com
+2. Nombre de usuario: ubuntu
+3. La llave privada previamente descargada.
 
 ### Installing
 
