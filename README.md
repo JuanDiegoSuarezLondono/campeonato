@@ -88,16 +88,20 @@ Además, si nos dirigimos a la dirección de la instancia, en este caso *“54.2
 sudo apt-get install mysql-server
 ```
 Para verificar la correcta instalación usamos el comando `mysql --version`, dando un resultado parecido a este:
->mysql  Ver 8.0.26-0ubuntu0.20.04.2 for Linux on x86_64 ((Ubuntu))
+```
+mysql  Ver 8.0.26-0ubuntu0.20.04.2 for Linux on x86_64 ((Ubuntu))
+```
 **3. PHP:**
 ```
 sudo apt-get install php libapache2-mod-php php-mysql
 ```
 Para verificar la correcta instalación usamos el comando `php --version`, dando un resultado parecido a este:
-> PHP 7.4.3 (cli) (built: Jul  5 2021 15:13:35) ( NTS )
-> Copyright (c) The PHP Group
-> Zend Engine v3.4.0, Copyright (c) Zend Technologies
->     with Zend OPcache v7.4.3, Copyright (c), by Zend Technologies
+```
+PHP 7.4.3 (cli) (built: Jul  5 2021 15:13:35) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.3, Copyright (c), by Zend Technologies
+```
 ### Descarga de proyecto
 
 Una vez se tengan los programas previos en el servidor, podemos dar lugar a la descarga de los elementos del proyecto. Para lograr este cometido seguimos los siguientes pasos:
@@ -111,61 +115,69 @@ cd /home/ubuntu
 git clone https://github.com/JuanDiegoSuarezLondono/campeonato
 ```
 Si todo sale bien, este es el resultado:
-> Cloning into 'campeonato'...
-> remote: Enumerating objects: 14096, done.
-> remote: Counting objects: 100% (14096/14096), done.
-> remote: Compressing objects: 100% (10526/10526), done.
-> remote: Total 14096 (delta 2943), reused 13936 (delta 2792), pack-reused 0
-> Receiving objects: 100% (14096/14096), 19.35 MiB | 16.35 MiB/s, done.
-> Resolving deltas: 100% (2943/2943), done.
-> Updating files: 100% (14576/14576), done.
+```
+Cloning into 'campeonato'...
+remote: Enumerating objects: 14096, done.
+remote: Counting objects: 100% (14096/14096), done.
+remote: Compressing objects: 100% (10526/10526), done.
+remote: Total 14096 (delta 2943), reused 13936 (delta 2792), pack-reused 0
+Receiving objects: 100% (14096/14096), 19.35 MiB | 16.35 MiB/s, done.
+Resolving deltas: 100% (2943/2943), done.
+Updating files: 100% (14576/14576), done.
+```
 3. Clonamos el repositorio que posee el sql para montar la base de datos que se va a utilizar:
 ```
 git clone https://github.com/JuanDiegoSuarezLondono/sqlCampeonato
 ```
 Si todo sale bien, este es el resultado:
-> Cloning into 'sqlCampeonato'...
-> remote: Enumerating objects: 12, done.
-> remote: Counting objects: 100% (12/12), done.
-> remote: Compressing objects: 100% (9/9), done.
->remote: Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
-> Unpacking objects: 100% (12/12), 3.33 KiB | 1.11 MiB/s, done.
+```
+Cloning into 'sqlCampeonato'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), 3.33 KiB | 1.11 MiB/s, done.
+```
 Si ingresamos el comando `ls` podemos comprobar si los archivos han sido clonados:
-> campeonato  sqlCampeonato
+```
+campeonato  sqlCampeonato
+```
 ### Configuración del mysql
 
 En este paso dejaremos la base de datos lista para ser consumida:
 
 1. Cargamos el sql clonado en el paso 3 de las descargas a nuestro mysql:
-
 ```
 mysql < /home/ubuntu/sqlCampeonato/1049636949_script.sql
 ```
 2.Ahora ingresamos a la mysql:
-
 ```
 mysql
 ```
 Y si queremos confirmar que la base de datos ha sido montada correctamente usamos el comando *‘show databases’* y veremos una con el nombre *`bd_campeonato`*:
-> +--------------------+
-> | Database           |
-> +--------------------+
-> | bd_campeonato      |
-> | information_schema |
-> | mysql              |
-> | performance_schema |
-> | sys                |
-> +--------------------+
-> 5 rows in set (0.02 sec)
+```
++--------------------+
+| Database           |
++--------------------+
+| bd_campeonato      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.02 sec)
+```
 Y en ella podremos ver con el comando `use bd_campeonato` y `show tables` las entidades requeridas para el ejercicio:
-> +-------------------------+
-> | Tables_in_bd_campeonato |
-> +-------------------------+
-> | equipos                 |
-> | partidos                |
-> | usuarios                |
-> +-------------------------+
-> 3 rows in set (0.00 sec)
+```
++-------------------------+
+| Tables_in_bd_campeonato |
++-------------------------+
+| equipos                 |
+| partidos                |
+| usuarios                |
++-------------------------+
+3 rows in set (0.00 sec)
+```
 **Nota:** La base de datos viene igualmente poblada con los siguientes datos por defecto:
 
 - Usuario:
