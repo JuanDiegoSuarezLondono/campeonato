@@ -53,7 +53,7 @@ Antes que nada, se necesitan 3 programas básicos para correr la página. A cont
 ```
 sudo apt-get install apache2
 ```
-Para verificar la correcta instalación usamos el comando `systemctl status apache2`:
+Para verificar la correcta instalación usamos el comando `systemctl status apache2`, dando un resultado parecido a este:
 ```
 ● apache2.service - The Apache HTTP Server
      Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
@@ -77,20 +77,67 @@ Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Started The Apache HTTP Server.
 Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloading The Apache HTTP Server.
 Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloaded The Apache HTTP Server.
 ```
-## Help
+Además, si nos dirigimos a la dirección de la instancia, en este caso *“54.232.133.136”*, nos encontraremos con la página que muestra apache por defecto:
 
-Any advise for common problems or issues.
+![image](https://user-images.githubusercontent.com/89165682/130542478-7a509856-95d4-46bb-9005-4f0333fa1efc.png)
+
+**2. Mysql:**
 ```
-command to run if program contains helper info
+sudo apt-get install mysql-server
 ```
+Para verificar la correcta instalación usamos el comando `mysql --version`, dando un resultado parecido a este:
+```
+mysql  Ver 8.0.26-0ubuntu0.20.04.2 for Linux on x86_64 ((Ubuntu))
+```
+**3. PHP:**
+```
+sudo apt-get install php libapache2-mod-php php-mysql
+```
+Para verificar la correcta instalación usamos el comando `php --version`, dando un resultado parecido a este:
+```
+PHP 7.4.3 (cli) (built: Jul  5 2021 15:13:35) ( NTS )
+Copyright (c) The PHP Group
+Zend Engine v3.4.0, Copyright (c) Zend Technologies
+    with Zend OPcache v7.4.3, Copyright (c), by Zend Technologies
+```
+### Descarga de proyecto
 
-## Authors
+Una vez se tengan los programas previos en el servidor, podemos dar lugar a la descarga de los elementos del proyecto. Para lograr este cometido seguimos los siguientes pasos:
 
-Contributors names and contact info
-
-ex. Dominique Pizzie  
-ex. [@DomPizzie](https://twitter.com/dompizzie)
-
+1. Nos ubicamos en la dirección Ubuntu si es que la instancia no nos ubica ahí al entrar:
+```
+cd /home/ubuntu
+```
+2. Clonamos el repositorio que posee el **front end** y **back end** de la página:
+```
+git clone https://github.com/JuanDiegoSuarezLondono/campeonato
+```
+Si todo sale bien, este es el resultado:
+```
+Cloning into 'campeonato'...
+remote: Enumerating objects: 14096, done.
+remote: Counting objects: 100% (14096/14096), done.
+remote: Compressing objects: 100% (10526/10526), done.
+remote: Total 14096 (delta 2943), reused 13936 (delta 2792), pack-reused 0
+Receiving objects: 100% (14096/14096), 19.35 MiB | 16.35 MiB/s, done.
+Resolving deltas: 100% (2943/2943), done.
+Updating files: 100% (14576/14576), done.
+```
+3. Clonamos el repositorio que posee el sql para montar la base de datos que se va a utilizar:
+```
+git clone https://github.com/JuanDiegoSuarezLondono/sqlCampeonato
+```
+Si todo sale bien, este es el resultado:
+```
+Cloning into 'sqlCampeonato'...
+remote: Enumerating objects: 12, done.
+remote: Counting objects: 100% (12/12), done.
+remote: Compressing objects: 100% (9/9), done.
+remote: Total 12 (delta 2), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (12/12), 3.33 KiB | 1.11 MiB/s, done.
+```
+Si ingresamos el comando ‘ls’ podemos comprobar si los archivos han sido clonados:
+> campeonato  sqlCampeonato
 ## Version History
 
 * 0.2
