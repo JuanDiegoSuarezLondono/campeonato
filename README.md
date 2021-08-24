@@ -54,27 +54,6 @@ Antes que nada, se necesitan 3 programas básicos para correr la página. A cont
 sudo apt-get install apache2
 ```
 Para verificar la correcta instalación usamos el comando `systemctl status apache2`, dando un resultado parecido a este:
-> ● apache2.service - The Apache HTTP Server
->      Loaded: loaded (/lib/systemd/system/apache2.service; enabled; vendor preset: enabled)
->      Active: active (running) since Sun 2021-08-22 05:53:56 UTC; 1 day 19h ago
->        Docs: https://httpd.apache.org/docs/2.4/
->     Process: 60709 ExecReload=/usr/sbin/apachectl graceful (code=exited, status=0/SUCCESS)
->    Main PID: 23258 (apache2)
->       Tasks: 7 (limit: 1160)
->      Memory: 20.7M
->      CGroup: /system.slice/apache2.service
->              ├─23258 /usr/sbin/apache2 -k start
->              ├─60716 /usr/sbin/apache2 -k start
->              ├─60717 /usr/sbin/apache2 -k start
->              ├─60718 /usr/sbin/apache2 -k start
->              ├─60719 /usr/sbin/apache2 -k start
->              ├─60720 /usr/sbin/apache2 -k start
->              └─60835 /usr/sbin/apache2 -k start
-> 
-> Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Starting The Apache HTTP Server...
-> Aug 22 05:53:56 ip-172-31-14-227 systemd[1]: Started The Apache HTTP Server.
-> Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloading The Apache HTTP Server.
-> Aug 24 00:00:44 ip-172-31-14-227 systemd[1]: Reloaded The Apache HTTP Server.
 
 ```
 ● apache2.service - The Apache HTTP Server
