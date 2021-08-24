@@ -24,7 +24,7 @@ Sistema web soportado en arquitectura API REST que permite el registro y autenti
 
 En la siguiente guía se ilustrarán los pasos necesarios para poder implementar el sistema web de campeonato solicitado como test para “formadores y tutores ciclo 3” desarrollado en html, css y javascript (para el front end), y php (para el back end) puros sin frameworks. Todo se realizará mediante un ejemplo implementado en un servidor desplegado en el servicio EC2 de Amazon AWS.
 
-**Nota:** El front end y el back end están en el mismo repositorio con fines de agilizar el proceso de despliegue. El back end esta en el directorio “campeonato_API”.
+**Nota:** El front end y el back end están en el mismo repositorio con fines de agilizar el proceso de despliegue. El back end esta en el directorio *“campeonato_API”*.
 
 ### Especificaciones del servidor usado
 
@@ -39,19 +39,19 @@ Se descarga la llave privada y se guarda en el equipo local para posteriormente 
 2. Nombre de usuario: ubuntu
 3. La llave privada previamente descargada.
 
-Una vez terminado, la instancia del servidor se autoconfigura con el id público *Esto es cursiva* “54.232.133.136” que es la dirección donde va a estar alojada nuestra página.
+Una vez terminado, la instancia del servidor se autoconfigura con el id público *“54.232.133.136”* que es la dirección donde va a estar alojada nuestra página.
 
-### Installing
+## Despliegue del programa
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+Una vez corriendo la instancia y habiendo ingresado al servidor por consola, se puede comenzar a desplegar la página.
 
-### Executing program
+### Requisitos previos
 
-* How to run the program
-* Step-by-step bullets
+Antes que nada, se necesitan 3 programas básicos para correr la página. A continuación, se listan estos programas junto a su comando de instalación.
+
+**1. Apache:**
 ```
-code blocks for commands
+sudo apt-get install apache2"
 ```
 
 ## Help
