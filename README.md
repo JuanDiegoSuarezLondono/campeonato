@@ -22,6 +22,10 @@ Sistema web soportado en arquitectura API REST que permite el registro y autenti
 
 ## Comencemos
 
+web de campeonato solicitado como test para “formadores y tutores ciclo 3” desarrollado en html, css y javascript (para el front end), y php (para el back end) puros sin frameworks. Todo se realizará mediante un ejemplo implementado en un servidor desplegado en el servicio EC2 de Amazon AWS.
+
+Nota: El front end y el back end están en el mismo repositorio con fines de agilizar el proceso de despliegue. El back end esta en el directorio “campeonato_API”.
+
 ### Requisitos previos
 
 En un servidor linux instalar lo siguiente:
