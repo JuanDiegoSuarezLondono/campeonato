@@ -32,12 +32,22 @@ Para el despliegue de la página web se empleo un servidor “**Ubuntu Server 20
 
 ![Captura](https://user-images.githubusercontent.com/89165682/130540742-96215d4d-6555-49ee-8d61-362826080b81.PNG)
 
+
+| TITULO1| TITULO2|
+| ----- | ---- |
+| CONTENIDO COLUMNA 1 | CONTENIDO COLUMNA 2 |
+
+
+
+
 Además, se habilitaron los puertos para permitir el trafico de todo tipo desde cualquier fuente (aunque sea poco seguro es solo para testear el proyecto).
 Se descarga la llave privada y se guarda en el equipo local para posteriormente acceder desde la consola local del ordenador o un programa tercero como “[MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)”. Las credenciales para acceder son:
 
 1. Public IPv4 DNS: ec2-54-232-133-136.sa-east-1.compute.amazonaws.com
 2. Nombre de usuario: ubuntu
 3. La llave privada previamente descargada.
+
+Una vez terminado, la instancia del servidor se autoconfigura con el id público “54.232.133.136” que es la dirección donde va a estar alojada nuestra página.
 
 ### Installing
 
