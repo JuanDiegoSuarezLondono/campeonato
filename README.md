@@ -205,6 +205,7 @@ cd /var/www/html/
 ```
 Y listamos los archivos y carpetas con el comando `ls`. El sitio web se podrá ver en la dirección de nuestro servidor, en el caso de este ejercicio es *“[54.232.133.136](http://54.232.133.136/)”* donde podrá hacer uso de la página montada para probar e ilustrar esta guía.
 
+<<<<<<< HEAD
 **Nota:** La instancia puede haberse dado de baja al momento de leer esto y la pagina por ende no estar en funcionamiento.
 
 ## Imagenes del la pagina Campeonato
@@ -225,3 +226,25 @@ Y listamos los archivos y carpetas con el comando `ls`. El sitio web se podrá v
 ## License
 
 This project is licensed under the The MIT License (MIT) License - see the LICENSE.md file for details
+=======
+## Imagenes del la pagina Campeonato
+
+### Pantalla de logueo
+![image](https://user-images.githubusercontent.com/89165682/130545295-d1438de7-e7bc-452a-8f00-3766c7945543.png)
+### Pantalla para registrarse
+![image](https://user-images.githubusercontent.com/89165682/130545319-de35c028-2e73-4ff6-b13b-d93580ccaba6.png)
+### Pantalla de bienvenida
+![image](https://user-images.githubusercontent.com/89165682/130545351-bc565933-9aae-456e-a29e-3e88fe7132d9.png)
+### Pantalla pra registrar un partido
+![image](https://user-images.githubusercontent.com/89165682/130545380-8f29afa1-4dda-4163-abdc-aab1f3eabe2d.png)
+### Pantalla para listar los partidos
+![image](https://user-images.githubusercontent.com/89165682/130545407-7a5ccef3-af15-4974-9df0-ffb3b440de92.png)
+### Pantalla para editar los goles de un partido
+![image](https://user-images.githubusercontent.com/89165682/130545436-7ded0c31-79f3-4b89-b181-ade0c14bf70c.png)
+
+**Nota:** La instancia puede haberse dado de baja al momento de leer esto.
+
+## License
+
+This project is licensed under the The MIT License (MIT) License - see the LICENSE.md file for details
+>>>>>>> 842def9d31dc119e7a9c39cc78caac9c91af4b27
