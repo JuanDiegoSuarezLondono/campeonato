@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+  <html>
+    <title>Campeonato</title>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+      <link rel="stylesheet" href="../css/sign-in.css">
+    </head>
+
+    <body>
+      <div id="contenedor">
+        <div id="contenedorcentrado">
+          <div id="encabezado">
+            <h1>Registrate</h1>
+            <h4>Recuerda que tu contraseña está cifrada y solo tú la conoces.</h4>
+          </div>
+          <div id="sigin">
+            <form id="sign-in">
+              <div>
+                <label for="nombre">Nos interesa conocerte ¿Como te llamas?</label>
+                <input type="text" name="nombre" required>
+              </div>
+    
+              <div>
+                <label for="correo">Danos un correo electronico para mantenerte al tanto</label>
+                <input type="email" name="correo" required>
+              </div>
+  
+              <div>
+                <label for="username">¿Como prefieres que te digamos?</label>
+                <input type="text" name="username" required>
+              </div>
+                    
+              <div>
+                <label for="new-pass">Pongámosela difícil a los maleantes, dame una contraseña </label>
+                <input type="password" name="new-pass" required>
+              </div>
+  
+              <div>
+                <label for="conf-new-pass">Escribe la contraseña de nuevo... solo para verificar</label>
+                <input type="password" name="conf-new-pass" required>
+              </div>
+              
+              <div>
+                <button type="submit">Enviar</button>
+              </div>
+            </form> 
+          </div> 
+        </div>  
+    </div>
+
+      <script type="module" src="../js/sign.js"></script>
+    </body>
+  </html>

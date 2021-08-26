@@ -1,0 +1,118 @@
+body {
+    font-family: 'Overpass', sans-serif;
+    font-weight: normal;
+    font-size: 100%;
+    color: #1b262c;
+    
+    margin: 0;
+    background-color: #5f6769;
+}
+
+#contenedor {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    min-height: 100vh;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(../assets/imagenes/fondo.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#titulo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    margin-bottom: 10px;
+    max-width: 920px;
+    min-width: 820px;
+    background-color: rgba(69, 82, 82, 0.6);
+    color: rgb(255, 255, 255);
+}
+
+#contenedorcentrado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    width: 100%;
+    max-width: 720px;
+    min-width: 720px;
+    padding: 30px 30px 50px 30px;
+    background-color: #719192;
+    
+    -webkit-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    box-shadow: 0px 0px 5px 5px rgba(0,0,0,0.15);
+    
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    
+    box-sizing: border-box;
+    
+    opacity: 1;
+    filter: alpha(opacity=1);
+}
+
+#contenedorcentrado button {
+    font-family: 'Overpass', sans-serif;
+    font-size: 110%;
+    color:#1b262c;
+    width: 30%;
+    height: 40px;
+    border: none;
+    
+    border-radius: 3px 3px 3px 3px;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    
+    background-color: #dfcdc3;
+    
+    margin-top: 40px;
+}
+
+#contenedorcentrado button:hover {
+    background-color: #3c4245;
+    color:#dfcdc3;
+}
+
+#tabla-partidos {
+    background-color: white;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #tabla-partidos td, #tabla-partidos th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #tabla-partidos tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #tabla-partidos tr:hover {background-color: #ddd;}
+  
+  #tabla-partidos th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: rgba(69, 82, 82);
+    color: white;
+  }
+
+@media all and (max-width: 775px)
+{
+    
+    #contenedorcentrado {
+        margin: 0 auto;
+    }
+
+}

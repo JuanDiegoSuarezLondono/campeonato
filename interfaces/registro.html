@@ -1,0 +1,39 @@
+
+  <!DOCTYPE html>
+  <html>
+    <title>Campeonato</title>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <link rel="stylesheet" href="../css/registro.css">
+    </head>
+
+    <body>
+        <div id="contenedor">
+
+          <div id="titulo">
+            <h1>Registrar Partidos</h1>
+            <h3>Ingresa tu partido</h3>
+          </div>
+
+          <div id="contenedorcentrado">
+            <form id="registro">
+              <label for="fecha">Fecha:</label>
+              <input type="date" id="fecha" name="fecha"value="2021-08-01">
+              <div id="selects">
+                <div class="col-select">
+                  <label for="select-local">Equipo Local</label>
+                  <select name="select-local" id="select-local"></select>
+                </div>
+                <div class="col-select">
+                  <label for="select-visitante">Equipo Visitante</label>
+                  <select name="select-visitante" id="select-visitante"></select>
+                </div>
+              </div>
+              <button type="submit">Enviar</button>
+            </form>
+          </div>
+        </div>
+      <script  type="module" src="../js/registro.js"></script>
+    </body>
+  </html>

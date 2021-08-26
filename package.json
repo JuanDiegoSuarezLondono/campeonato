@@ -1,0 +1,29 @@
+{
+  "name": "campeonato",
+  "version": "1.0.0",
+  "description": "Sistema web soportado en arquitectura API REST que permite el registro y autenticación de usuarios y el registro de los partidos jugados y por jugar de equipos de futbol (previamente cargados).",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JuanDiegoSuarezLondono/campeonato.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JuanDiegoSuarezLondono/campeonato/issues"
+  },
+  "homepage": "https://github.com/JuanDiegoSuarezLondono/campeonato#readme",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1"
+  }
+}
