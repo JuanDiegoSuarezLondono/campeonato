@@ -144,7 +144,7 @@ campeonato  sqlCampeonato
 ```
 ### Configuración del mysql
 
-En este paso dejaremos la base de datos lista para ser consumida:
+En este paso dejaremos la base de datos lista para ser consumida, puedes encontrar el repositorio que contiene el sql de la base de datos [acá](https://github.com/JuanDiegoSuarezLondono/sqlCampeonato):
 
 1. Cargamos el sql clonado en el paso 3 de las descargas a nuestro mysql:
 ```
